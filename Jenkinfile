@@ -10,7 +10,7 @@ pipeline {
       stage('checkout') {
            steps {
              
-                git branch: 'main', url: 'github.com/prit2477/demosample.git'
+                git branch: 'main', url: 'https://github.com/prit2477/demosample.git'
           }
         }
 }

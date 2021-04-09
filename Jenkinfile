@@ -1,4 +1,4 @@
-peline {
+pipeline {
     agent any
     
     tools
@@ -14,3 +14,11 @@ peline {
           }
         }
 }
+
+         stage('Execute Maven') {
+           steps {
+             
+                sh 'mvn package'             
+          }
+        }
+        

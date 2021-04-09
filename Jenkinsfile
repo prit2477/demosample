@@ -1,24 +1,15 @@
-pipeline {
-    agent any
-    
-    tools
-    {
-       maven "Maven"
+peline {
+    agent {
+        docker {
+            image 'maven:3-alpine' 
+            args '-v /root/.m2:/root/.m2' 
+        }
     }
-     
     stages {
-      stage('checkout') {
-           steps {
-             
-                git branch: 'main', url: 'https://github.com/prit2477/demosample.git'
-          }
+        stage('Build') { 
+            steps {
+                sh 'mvn -B -DskipTests clean package' 
+            }
         }
+    }
 }
-
-         stage('Execute Maven') {
-           steps {
-             
-                sh 'mvn package'             
-          }
-        }
-        

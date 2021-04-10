@@ -1,0 +1,10 @@
+---
+- hosts: localhost
+  become: yes
+  
+  tasks:
+  - name: copy war
+    copy: 
+    src:     
+
+- 
